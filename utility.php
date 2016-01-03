@@ -25,26 +25,26 @@ if ( ! function_exists('selected')) {
 
 
 if ( ! function_exists('array_to_html_attr')) {
-    /**
-     * convert associative array into html attribute style.
-     * 
+	/**
+	 * convert associative array into html attribute style.
+	 * 
 	 * $attributes = [
 	 * 	'id' 	=> 'html-id',
 	 * 	'class' => 'html-class-name'
 	 * ];
 	 *
 	 * outputs 
-     * id="html-id" class="html-class-name"
-     *  
-     * @param  array  $attributes
-     * @return string
-     */
+	 * id="html-id" class="html-class-name"
+	 *  
+	 * @param  array  $attributes
+	 * @return string
+	 */
 	function array_to_html_attr($attributes)
 	{
 		$attributes = array_map(function ($k, $v){ 
 			return $k .'="'. htmlspecialchars($v) .'"'; 
 		}, array_keys($attributes), $attributes );
-
+	
 		return implode(' ', $attributes);
 	}
 }
