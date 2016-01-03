@@ -1,4 +1,5 @@
 <?php
+
 if ( ! function_exists('selected')) {
     /**
      * return the html attribute "selected"
