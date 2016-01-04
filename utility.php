@@ -77,3 +77,29 @@ if ( ! function_exists('array_to_dropdown')) {
         return $select_html;
     }
 }
+
+
+if ( ! function_exists('extend_array')) {
+    /**
+     * this function is a clone of the original wordpress function
+     * wp_parse_args()
+     * with a little modification to suit my use
+     * 
+     * Merge user defined arguments into defaults array.
+     * 
+     * @param  array | object  $args
+     * @param  array  $defaults
+     * @return array
+     */
+    function extend_array( $args, $defaults = [] ) {
+        if ( is_object( $args ) )
+            $r = get_object_vars( $args );
+        else
+            $r =& $args;
+
+        if ( is_array( $defaults ) )
+            return array_merge( $defaults, $r );
+
+        return $r;
+    }
+}
