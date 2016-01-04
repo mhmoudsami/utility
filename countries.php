@@ -254,6 +254,7 @@ if ( ! function_exists('countries')) {
             "HK" =>'هونغ كونغ SAR',
             "WF" =>'واليس وفوتونا',
         ];
+        
         if( ! is_null($code) && isset($countries[$code]) )
         {
             return $countries[$code];
